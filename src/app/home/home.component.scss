@@ -1,0 +1,15 @@
+.home-container {
+  height: calc(100% - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .terminal-button {
+    width: 100%;
+  }
+}
