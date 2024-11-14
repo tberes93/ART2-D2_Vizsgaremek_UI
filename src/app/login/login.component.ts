@@ -25,7 +25,7 @@ export class LoginComponent {
     private readonly router: Router,
   ) {
     this.loginForm = this.formBuilder.group({
-      principal: ['', [Validators.required, slashValidator()]],
+      principal: [''],
       password: ['', [Validators.required, Validators.minLength(this.minLength)]],
     });
 
@@ -46,16 +46,13 @@ export class LoginComponent {
     const [domain = '', username = ''] = principal.split('/');
 
     this.auth.login(domain, username, password).subscribe((response) => {
-      if (response.authToken) {
-        this.router.navigate(['/home']).then(() => this.snackbar.loginSuccess());
-      }
+      //TODO be kell kötni, majd ha lesz már auth a backenden
+      // if (response.authToken) {
+      //   this.router.navigate(['/home']).then(() => this.snackbar.loginSuccess());
+      // }
+
+      this.router.navigate(['/home']).then(() => this.snackbar.loginSuccess());
+
     });
   }
-}
-
-export function slashValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const value = control.value;
-    return value.includes('/') ? null : { missingSlash: true };
-  };
 }
