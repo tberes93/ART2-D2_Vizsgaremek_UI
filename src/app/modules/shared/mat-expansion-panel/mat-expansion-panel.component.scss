@@ -1,0 +1,23 @@
+.mat-accordion {
+  .mat-expansion-panel-header,
+  .mat-expansion-panel-header:hover {
+    background-color: #44B54F;
+
+    &:hover {
+      background-color: #2F765C;
+    }
+  }
+
+  & > .mat-expansion-panel {
+    &:first-of-type,
+    &:last-of-type {
+      border-radius: 6px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+}

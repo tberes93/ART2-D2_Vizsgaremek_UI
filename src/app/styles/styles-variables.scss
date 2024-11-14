@@ -1,0 +1,83 @@
+$font-size: 14px;
+$button-font-size: 14px;
+$background-color: #f5f5f5;
+
+$post-primary: (
+  50: #44b54f,
+  100: white,
+  200: white,
+  300: white,
+  400: white,
+  500: white,
+  600: white,
+  700: white,
+  800: white,
+  900: white,
+  expansion: #92979d,
+  success: #95c71e,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    expansion: white,
+    success: white,
+    police: white,
+  ),
+);
+
+$post-accent: (
+  50: #2f765c,
+  100: white,
+  200: white,
+  300: white,
+  400: white,
+  500: white,
+  600: white,
+  700: white,
+  800: white,
+  900: white,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$post-warn: (
+  50: #cb332e,
+  100: white,
+  200: white,
+  300: white,
+  400: white,
+  500: white,
+  600: white,
+  700: white,
+  800: white,
+  900: white,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);

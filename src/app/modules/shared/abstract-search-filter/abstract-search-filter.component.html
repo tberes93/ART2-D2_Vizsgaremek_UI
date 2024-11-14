@@ -1,0 +1,45 @@
+<div class="py-4" *ngIf="formDescriptor && formGroup">
+  <h1 class="title">{{ title }}</h1>
+
+  <form [formGroup]="formGroup">
+    <mat-card>
+      <mat-card-content>
+        <div class="grid grid-cols-4 gap-6">
+          <div *ngFor="let entry of formDescriptor | keyvalue: originalOrder" class="grid grid-cols-7">
+            <div class="col-span-2 content-center">{{ entry.value?.label }}:</div>
+
+            <div *ngIf="entry.value?.type === 'text'" class="col-span-5">
+              <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                <input matInput [formControlName]="entry.value?.controlName"/>
+              </mat-form-field>
+            </div>
+
+            <div *ngIf="entry.value?.type === 'logical'" class="col-span-5">
+              <p class="checkbox-item">
+                <mat-checkbox color="primary" [formControlName]="entry.value?.controlName"></mat-checkbox>
+              </p>
+            </div>
+
+            <div *ngIf="entry.value?.type === 'selectable'" class="col-span-5">
+              <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                <mat-select [formControlName]="entry.value?.controlName">
+                  <mat-option *ngFor="let element of getSelectables(entry.key)" [value]="element.key">
+                    {{ element.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div *ngFor="let i of countEmptyDivs()" class="grid grid-cols-7"></div>
+
+          <div class="grid grid-flow-col auto-cols-max justify-end">
+            <button mat-raised-button color="primary" (click)="searchClicked()">
+              <mat-icon class="material-symbols-outlined">search</mat-icon>Keresés
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

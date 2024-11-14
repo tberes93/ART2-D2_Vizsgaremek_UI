@@ -1,0 +1,10 @@
+<mat-sidenav-container>
+  <mat-sidenav #matSidenav [mode]="mode.value" [opened]="isSidenavOpen()">
+    <pst-sidenav></pst-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <pst-header></pst-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

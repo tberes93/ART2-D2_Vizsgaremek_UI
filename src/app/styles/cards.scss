@@ -1,0 +1,54 @@
+$table-row-selected-color: #911191;
+
+.shared-card-with {
+  width: 100%;
+}
+
+.shared-card-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.shared-card-wrapper {
+  padding-block-start: 16px;
+
+  mat-card {
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid #2F765C;
+    }
+
+    .card-header-icon {
+      display: grid;
+      box-sizing: content-box;
+      place-content: center;
+      background-color: rgba(0, 110, 0, 0.12);
+      border-radius: 8px;
+      color: #2F765C;
+      font-size: 32px;
+      padding: 4px;
+    }
+  }
+}
+
+
+.filter-card-border,
+.table-card-border {
+  border-radius: 12px;
+  border-width: 2px;
+}
+
+.table-card-sum-title {
+  margin-inline-end: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table-card-sum-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #92979D;
+}

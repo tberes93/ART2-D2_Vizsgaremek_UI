@@ -1,0 +1,15 @@
+<mat-accordion class="accordion-header-align">
+  <mat-expansion-panel class="mat-elevation-z4 mb-3" (opened)="onPanelOpened()" (closed)="onPanelClosed()" [expanded]="isPanelOpened()">
+    <mat-expansion-panel-header [collapsedHeight]="'40px'" [expandedHeight]="'40px'">
+      <mat-panel-title>
+        <div class="title">{{ title }}</div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="row align-items-top mt-3">
+      <div class="col-sm-12">
+        <ng-template [ngTemplateOutlet]="template"></ng-template>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

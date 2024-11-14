@@ -1,0 +1,29 @@
+<div class="sidenav-content">
+  <div class="menu-navs">
+
+    <div class="px-3 py-3">
+      <img src="../assets/images/..." alt="White logo"/>
+    </div>
+
+    <mat-nav-list>
+      @for (nav of navs; track nav) {
+        <mat-list-item routerLinkActive="active-link" routerLink="{{ nav.route }}">
+          <mat-icon matListItemIcon class="material-symbols-outlined">{{ nav.icon }}</mat-icon>
+          <a matListItemTitle>{{ nav.name }}</a>
+        </mat-list-item>
+      }
+    </mat-nav-list>
+  </div>
+
+  <div class="logout-button-container">
+    <button
+      mat-raised-button
+      color="accent"
+      class="logout-button"
+      (click)="userLogout()"
+    >
+      <mat-icon class="material-symbols-outlined">logout</mat-icon>Kijelentkezés
+    </button>
+  </div>
+</div>
+

@@ -1,0 +1,39 @@
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .menu-navs {
+    flex-grow: 1;
+
+    mat-nav-list {
+      display: grid;
+      gap: 4px;
+      margin-inline: 8px;
+
+      .active-link {
+        background-color: #FFFFFF;
+      }
+
+      .mat-mdc-list-item {
+        border-radius: 6px;
+
+        &:hover, &:focus, &:active {
+          background-color: #ffff55;
+        }
+      }
+
+      .mat-mdc-list-item-icon, .mat-mdc-list-item-title {
+        color: white;
+      }
+    }
+  }
+
+  .logout-button-container {
+    padding: 16px 8px;
+
+    .logout-button {
+      width: 100%;
+    }
+  }
+}

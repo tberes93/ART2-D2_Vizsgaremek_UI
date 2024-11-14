@@ -1,0 +1,40 @@
+<div class="login-container">
+  <div class="login-box">
+    <div class="mb-3" align="center">
+      <img src="./assets/images/logo.jpg" width="100" height="100" alt="Alkalmazás logo"/>
+    </div>
+
+    <form [formGroup]="loginForm">
+      <div class="input-group"
+           [ngClass]="{'has-error': loginForm.get('principal')?.invalid && submitted && (loginForm.get('principal')?.dirty || loginForm.get('principal')?.touched)}">
+        <label for="principal">Felhasználónév</label>
+        <input matInput formControlName="principal" id="principal" name="username" type="text" class="username" required/>
+        <div
+          *ngIf="loginForm.get('principal')?.errors && (loginForm.get('principal')?.dirty || loginForm.get('principal')?.touched) && submitted">
+          <small class="error" *ngIf="loginForm.get('principal')?.hasError('missingSlash')">
+            A felhasználónév helyes formátuma: 'domain/username'
+          </small>
+        </div>
+      </div>
+
+      <div class="input-group"
+           [ngClass]="{'has-error': loginForm.get('password')?.invalid && submitted && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)}">
+        <label for="password">Jelszó</label>
+        <input matInput formControlName="password" id="password" name="password" type="password" required/>
+        <div
+          *ngIf="loginForm.get('password')?.errors && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && submitted">
+          <small class="error" *ngIf="loginForm.get('password')?.hasError('minlength')">
+            A jelszó hosszának legalább {{ minLength }} karakternek kell lennie
+          </small>
+        </div>
+      </div>
+
+      <div class="pt-3">
+        <button mat-raised-button color="primary" type="submit" class="login-button" (click)="onSubmit()">
+          <mat-icon class="material-symbols-outlined">login</mat-icon>
+          Bejelentkezés
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
