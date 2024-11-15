@@ -10,13 +10,13 @@ export const navs: Nav[] = [
   {
     id: 'Users',
     name: 'Felhasználók',
-    icon: 'local_convenience_store',
+    icon: 'group',
     route: 'users',
   },
   {
     id: 'Eye practise',
     name: 'Szemtorna',
-    icon: 'group',
+    icon: 'fitness_center',
     route: 'eye_practise',
   },
 ];

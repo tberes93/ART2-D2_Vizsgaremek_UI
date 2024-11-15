@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
+import {UsersComponent} from './modules/users/users.component';
 
 const postRoutes: Routes = [
   {
@@ -19,11 +20,11 @@ const postRoutes: Routes = [
     data: { title: 'Home Page' },
     component: HomeComponent,
   },
-  // {
-  //   path: 'machines',
-  //   data: { title: 'Machines Page' },
-  //   loadChildren: () => import('./modules/machines/machines.module').then(m => m.MachinesModule),
-  // },
+  {
+    path: 'users',
+    data: { title: 'Users Page' },
+    component: UsersComponent,
+  },
   // {
   //   path: 'partners',
   //   data: { title: 'Partners Page' },
