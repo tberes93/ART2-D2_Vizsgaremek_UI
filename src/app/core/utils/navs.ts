@@ -8,6 +8,12 @@ export const navs: Nav[] = [
     route: 'home',
   },
   {
+    id: 'My profile',
+    name: 'Saját profil',
+    icon: 'manage_accounts',
+    route: 'my_profile',
+  },
+  {
     id: 'Users',
     name: 'Felhasználók',
     icon: 'group',
@@ -18,5 +24,11 @@ export const navs: Nav[] = [
     name: 'Szemtorna',
     icon: 'fitness_center',
     route: 'eye_practise',
+  },
+  {
+    id: 'Top ten',
+    name: 'Top 10-es lista',
+    icon: 'emoji_events',
+    route: 'top_ten',
   },
 ];

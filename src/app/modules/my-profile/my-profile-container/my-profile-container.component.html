@@ -1,0 +1,20 @@
+<div class="my-profile-container p-4">
+  <h1 class="title">{{ title }}</h1>
+
+  <div class="my-profile-wrapper">
+    <div class="grid grid-cols-1 gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-4 xl:gap-y-4">
+      @for (my_profile of myProfileInterfaces; track my_profile) {
+        <mat-card appearance="outlined" routerLink="{{ my_profile.route }}">
+          <mat-card-header>
+            <mat-icon mat-card-avatar class="card-header-icon material-symbols-outlined">{{ my_profile.icon }}</mat-icon>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-card-title>{{ my_profile.name }}</mat-card-title>
+            <mat-card-subtitle>{{ my_profile.description }}</mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </div>
+</div>
+

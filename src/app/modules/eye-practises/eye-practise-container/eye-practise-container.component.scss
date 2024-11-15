@@ -1,0 +1,13 @@
+@import 'cards';
+
+.eye-practises-container {
+  @extend .shared-card-with;
+
+  .title {
+    @extend .shared-card-title;
+  }
+
+  .eye-practises-wrapper {
+    @extend .shared-card-wrapper;
+  }
+}

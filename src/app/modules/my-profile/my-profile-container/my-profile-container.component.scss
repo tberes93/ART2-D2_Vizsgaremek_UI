@@ -1,0 +1,13 @@
+@import 'cards';
+
+.my-profile-container {
+  @extend .shared-card-with;
+
+  .title {
+    @extend .shared-card-title;
+  }
+
+  .my-profile-wrapper {
+    @extend .shared-card-wrapper;
+  }
+}
