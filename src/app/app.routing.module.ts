@@ -3,11 +3,11 @@ import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 
 import { authGuard } from './services/authentication/auth.guard';
 
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { HomeComponent } from './home/home.component';
-import { LayoutComponent } from './layout/layout.component';
-import { LoginComponent } from './login/login.component';
-import {UsersComponent} from './modules/users/users.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LoginComponent } from './components/login/login.component';
+import {UsersComponent} from './components/users/users.component';
 
 const postRoutes: Routes = [
   {

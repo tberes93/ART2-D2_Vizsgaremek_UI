@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 
-import { SidenavService } from '../services/sidenav/sidenav.service';
+import { SidenavService } from '../../services/sidenav/sidenav.service';
 
 @Component({
   selector: 'pst-header',

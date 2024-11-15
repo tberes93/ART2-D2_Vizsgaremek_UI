@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
-import { AuthService } from '../services/authentication/auth.service';
-import { SnackbarService } from '../services/snackbar/snackbar.service';
+import { AuthService } from '../../services/authentication/auth.service';
+import { SnackbarService } from '../../services/snackbar/snackbar.service';
 
-import { Nav } from '../core/interfaces/nav.interface';
-import { navs } from '../core/utils/navs';
+import { Nav } from '../../core/interfaces/nav.interface';
+import { navs } from '../../core/utils/navs';
 
 @Component({
   selector: 'pst-sidenav',

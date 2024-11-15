@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { MIN_LENGTH } from '../services/authentication/auth.constant';
+import { MIN_LENGTH } from '../../services/authentication/auth.constant';
 
-import {AuthService} from '../services/authentication/auth.service';
-import {SnackbarService} from '../services/snackbar/snackbar.service';
+import {AuthService} from '../../services/authentication/auth.service';
+import {SnackbarService} from '../../services/snackbar/snackbar.service';
 
 @Component({
   selector: 'pst-login',

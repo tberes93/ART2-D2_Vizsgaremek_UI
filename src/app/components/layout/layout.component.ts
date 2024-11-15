@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { SidenavService } from '../services/sidenav/sidenav.service';
+import { SidenavService } from '../../services/sidenav/sidenav.service';
 import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({

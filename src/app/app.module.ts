@@ -9,22 +9,24 @@ import { SharedModule } from './modules/shared/shared.module';
 import { AuthInterceptor } from './services/authentication/auth.interceptor';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LayoutComponent } from './layout/layout.component';
-import { LoginComponent } from './login/login.component';
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { environment } from '../enviroments/enviroment';
 import { AppRoutingModule } from './app.routing.module';
 import { MaterialModule } from './modules/material.module';
-import {HeaderComponent} from './header/header.component';
-import {SidenavComponent} from './sidenav/sidenav.component'; // Import MaterialModule
+import {HeaderComponent} from './components/header/header.component';
+import {SidenavComponent} from './components/sidenav/sidenav.component';
+import {UsersComponent} from './components/users/users.component'; // Import MaterialModule
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    UsersComponent,
     LayoutComponent,
     LoginComponent,
     PageNotFoundComponent,
