@@ -25,41 +25,6 @@ const postRoutes: Routes = [
     data: { title: 'Users Page' },
     component: UsersComponent,
   },
-  // {
-  //   path: 'partners',
-  //   data: { title: 'Partners Page' },
-  //   loadChildren: () => import('./modules/partners/partners.module').then(m => m.PartnersModule),
-  // },
-  // {
-  //   path: 'data',
-  //   data: { title: 'Data Page' },
-  //   loadChildren: () => import('./modules/data/data.module').then(m => m.DataModule),
-  // },
-  // {
-  //   path: 'events',
-  //   data: { title: 'Events Page' },
-  //   loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule),
-  // },
-  // {
-  //   path: 'packages',
-  //   data: { title: 'Packages Page' },
-  //   loadChildren: () => import('./modules/packages/packages.module').then(m => m.PackagesModule),
-  // },
-  // {
-  //   path: 'checks',
-  //   data: { title: 'Checks Page' },
-  //   loadChildren: () => import('./modules/checks/checks.module').then(m => m.ChecksModule),
-  // },
-  // {
-  //   path: 'permissions',
-  //   data: { title: 'Permissions Page' },
-  //   loadChildren: () => import('./modules/permissions/permissions.module').then(m => m.PermissionsModule),
-  // },
-  // {
-  //   path: 'reports',
-  //   data: { title: 'Reports Page' },
-  //   loadChildren: () => import('./modules/reports/reports.module').then(m => m.ReportsModule),
-  // },
 ];
 
 const appRoutingModule: Routes = [
