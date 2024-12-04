@@ -1,11 +1,16 @@
 .home-container {
   height: calc(100% - 64px);
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   justify-content: space-between;
 
   .title {
     font-size: 32px;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: 26px;
     font-weight: bold;
   }
 

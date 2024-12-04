@@ -35,6 +35,11 @@ const postRoutes: Routes = [
     data: {title: 'Saját profil'},
     loadChildren: () => import('./modules/my-profile/my-profile.module').then(m => m.MyProfileModule),
   },
+  {
+    path: 'top_ten',
+    data: {title: 'Top 10-es lista'},
+    loadChildren: () => import('./modules/top-10/top-10.module').then(m => m.Top10Module),
+  },
 ];
 
 const appRoutingModule: Routes = [

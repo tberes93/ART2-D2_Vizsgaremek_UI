@@ -20,4 +20,6 @@ const components = [
   declarations: [...components],
   exports: [...components, MaterialModule],
 })
-export class SharedModule {}
+export class SharedModule {
+ 
+}

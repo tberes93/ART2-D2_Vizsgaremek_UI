@@ -6,7 +6,7 @@ export const myProfile: MyProfileInterface[] = [
     name: 'Eredményeim',
     icon: 'data_thresholding',
     description: 'Eddig elért pontszámaim',
-    route: 'my_resoults',
+    route: 'my_results',
   },
   {
     id: 'My badges',
