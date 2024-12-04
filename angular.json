@@ -66,14 +66,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "port": 4200,
+            "port": 4200
           },
           "configurations": {
             "production": {
-              "buildTarget": "ART2D2VizsgaremekGui:build:production"
+              "buildTarget": "ART2D2VizsgaremekGui:build:production",
+              "proxyConfig": "proxy.prod.json"
             },
             "development": {
-              "buildTarget": "ART2D2VizsgaremekGui:build:development"
+              "buildTarget": "ART2D2VizsgaremekGui:build:development",
+              "proxyConfig": "proxy.dev.json"
             }
           },
           "defaultConfiguration": "development"

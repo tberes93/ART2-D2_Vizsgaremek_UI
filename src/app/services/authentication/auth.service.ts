@@ -12,15 +12,16 @@ export class AuthService {
 
   constructor(private readonly http: HttpClient, private readonly router: Router) {}
 
-  login(domain: string, username: string, password: string): Observable<any> {
-    const loginPayload = { domain: domain, usercode: username, password: password };
+  login(username: string, password: string): Observable<any> {
+    const credentials = btoa(`${username}:${password}`); // Base64 kódolás
+    const headers = new HttpHeaders({
+      'Authorization': `Basic ${credentials}`
+    });
 
-    return this.http.post<any>(`${environment.apiUrl}/auth/login`, loginPayload).pipe(
+    return this.http.post<any>(`${environment.apiUrl}/login`, {headers}).pipe(
       tap((response) => {
-        if (response.authToken) {
-          localStorage.setItem('authToken', response.authToken);
-          this.isLoggedIn = true;
-        }
+        console.log("válasz:", response);
+        this.isLoggedIn = true;
       }),
       catchError((error) => {
         console.log('ERROR: ', error);

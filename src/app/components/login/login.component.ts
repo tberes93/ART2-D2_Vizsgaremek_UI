@@ -8,7 +8,7 @@ import {AuthService} from '../../services/authentication/auth.service';
 import {SnackbarService} from '../../services/snackbar/snackbar.service';
 
 @Component({
-  selector: 'pst-login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -25,7 +25,7 @@ export class LoginComponent {
     private readonly router: Router,
   ) {
     this.loginForm = this.formBuilder.group({
-      principal: [''],
+      username: [''],
       password: ['', [Validators.required, Validators.minLength(this.minLength)]],
     });
 
@@ -40,17 +40,13 @@ export class LoginComponent {
 
     if (this.loginForm.invalid) return;
 
-    const principal = this.loginForm.get('principal')?.value;
+    const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
 
-    const [domain = '', username = ''] = principal.split('/');
 
-    this.auth.login(domain, username, password).subscribe((response) => {
-      //TODO be kell kötni, majd ha lesz már auth a backenden
-      // if (response.authToken) {
-      //   this.router.navigate(['/home']).then(() => this.snackbar.loginSuccess());
-      // }
+    this.auth.login(username, password).subscribe((response) => {
 
+      console.log('Logged in successfully', response);
       this.router.navigate(['/home']).then(() => this.snackbar.loginSuccess());
 
     });

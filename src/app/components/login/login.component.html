@@ -6,12 +6,12 @@
 
     <form [formGroup]="loginForm">
       <div class="input-group"
-           [ngClass]="{'has-error': loginForm.get('principal')?.invalid && submitted && (loginForm.get('principal')?.dirty || loginForm.get('principal')?.touched)}">
-        <label for="principal">Felhasználónév</label>
-        <input matInput formControlName="principal" id="principal" name="username" type="text" class="username" required/>
+           [ngClass]="{'has-error': loginForm.get('username')?.invalid && submitted && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)}">
+        <label for="username">Felhasználónév</label>
+        <input matInput formControlName="username" id="username" name="username" type="text" class="username" required/>
         <div
-          *ngIf="loginForm.get('principal')?.errors && (loginForm.get('principal')?.dirty || loginForm.get('principal')?.touched) && submitted">
-          <small class="error" *ngIf="loginForm.get('principal')?.hasError('missingSlash')">
+          *ngIf="loginForm.get('username')?.errors && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched) && submitted">
+          <small class="error" *ngIf="loginForm.get('username')?.hasError('missingSlash')">
             A felhasználónév helyes formátuma: 'domain/username'
           </small>
         </div>
