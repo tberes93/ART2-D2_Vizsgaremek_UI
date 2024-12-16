@@ -1,3 +1,4 @@
+/*
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,15 +13,17 @@ export class AuthService {
 
   constructor(private readonly http: HttpClient, private readonly router: Router) {}
 
-  login(domain: string, username: string, password: string): Observable<any> {
-    const loginPayload = { domain: domain, usercode: username, password: password };
+  login(username: string, password: string): Observable<any> {
+    const loginPayload = { userCode: username, password: password };
 
     return this.http.post<any>(`${environment.apiUrl}/auth/login`, loginPayload).pipe(
       tap((response) => {
+        
         if (response.authToken) {
           localStorage.setItem('authToken', response.authToken);
           this.isLoggedIn = true;
         }
+          this.isLoggedIn = true;
       }),
       catchError((error) => {
         console.log('ERROR: ', error);
@@ -30,16 +33,16 @@ export class AuthService {
   }
 
   async logout(): Promise<void> {
-    localStorage.removeItem('authToken');
+    //localStorage.removeItem('authToken');
     this.isLoggedIn = false;
     await this.router.navigate(['/login']);
   }
 
   isAuthenticated(): boolean {
-    return this.isLoggedIn || !!localStorage.getItem('authToken');
+    return this.isLoggedIn/* || !!localStorage.getItem('authToken');
   }
 
   getToken(): string | null {
     return localStorage.getItem('authToken');
   }
-}
+}*/

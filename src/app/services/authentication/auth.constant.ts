@@ -1,1 +1,1 @@
-export const MIN_LENGTH: number = 6;
+export const MIN_LENGTH: number = 3;

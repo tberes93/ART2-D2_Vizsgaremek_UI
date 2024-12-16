@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
-import { AuthService } from '../../services/authentication/auth.service';
+//import { AuthService } from '../../services/authentication/auth.service';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
 
 import { Nav } from '../../core/interfaces/nav.interface';
 import { navs } from '../../core/utils/navs';
+import { AuthenticationService } from '../../services/authentication/authentication-service';
 
 @Component({
   selector: 'pst-sidenav',
@@ -14,11 +15,12 @@ import { navs } from '../../core/utils/navs';
 export class SidenavComponent {
   navs: Nav[];
 
-  constructor(private readonly auth: AuthService, private readonly snackbar: SnackbarService) {
+  constructor(private readonly auth: AuthenticationService, private readonly snackbar: SnackbarService) {
     this.navs = Object.assign([], navs);
   }
 
   userLogout(): void {
-    this.auth.logout().then(() => this.snackbar.logoutSuccess());
+    this.auth.logout();//.then(() => this.snackbar.logoutSuccess());
+    this.snackbar.logoutSuccess();
   }
 }

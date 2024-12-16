@@ -1,18 +1,19 @@
 import {NgModule} from '@angular/core';
 import {ExtraOptions, RouterModule, Routes} from '@angular/router';
 
-import {authGuard} from './services/authentication/auth.guard';
+//import {authGuard} from './services/authentication/auth.guard';
 
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {HomeComponent} from './components/home/home.component';
 import {LayoutComponent} from './components/layout/layout.component';
 import {LoginComponent} from './components/login/login.component';
 import {UsersComponent} from './components/users/users.component';
+import { AuthGuard } from './utils/auth-guard';
 
 const postRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
   {
@@ -50,7 +51,7 @@ const appRoutingModule: Routes = [
       {path: 'page-not-found', title: 'Page Not Found', component: PageNotFoundComponent},
       {path: '**', redirectTo: 'page-not-found', pathMatch: 'full'},
     ],
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: '**', redirectTo: 'login', pathMatch: 'full'},

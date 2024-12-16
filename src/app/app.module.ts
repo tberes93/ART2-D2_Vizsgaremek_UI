@@ -1,12 +1,12 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './modules/shared/shared.module';
 
-import { AuthInterceptor } from './services/authentication/auth.interceptor';
+//import { AuthInterceptor } from './services/authentication/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,7 +14,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
-import { environment } from '../enviroments/enviroment';
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app.routing.module';
 import { MaterialModule } from './modules/material.module';
 import {HeaderComponent} from './components/header/header.component';
@@ -41,13 +41,25 @@ import {UsersComponent} from './components/users/users.component'; // Import Mat
     ReactiveFormsModule,
     SharedModule,
   ],
+  /*
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
     }
-  ],
+  ],*/
+  
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  /*
+  static forRoot(): ModuleWithProviders<SharedModule> {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: InternalErrorInterceptor, multi: true}
+      ],
+    };
+  }*/
+}
