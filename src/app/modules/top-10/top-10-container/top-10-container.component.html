@@ -1,0 +1,54 @@
+<div class="top-10-container p-4">
+    <h1 class="title">{{ title }}</h1>
+
+    <mat-table
+        [dataSource]="dataSource">
+        <!--
+      <ng-container matColumnDef="hatarido">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Határidő </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ formatDateTimeString(row?.hatarido) }} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="eurAzonosito">
+        <mat-header-cell *matHeaderCellDef> EÜR azonosító </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row?.eurAzonosito }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="felelosTagallam">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Szerepkör </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ getEnumlabelSzerep(row?.szerep) }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="surgos">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Sürgős </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row?.surgos ? 'Igen' : 'Nem' }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="iktatoszam">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Iktatószám </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row?.iktatoszam }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="feladatTipus">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Feladat típus </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ getEnumlabelFeladatTipus(row?.feladatTipus) }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ugyTipus">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Ügy típus </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ getEnumlabelUgyTipus(row?.ugyTipus) }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="bekuldoSzervezet">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Beküldő szervezet </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row?.bekuldoSzervezet }} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedSajatColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedSajatColumns;"
+          (dblclick)="openSajatFeladatEditModal()" (click)="onRowClickSajat(row)" [ngClass]="isSajatSelected(row) ? 'selected' : ''">
+      </mat-row>
+      -->
+    </mat-table>
+    <!--
+    <mat-paginator #sajatPaginator
+                   [length]="sajatLength"
+                   [pageSize]="sajatPageSize"
+                   (page)="pageChangedSajat($event)"
+                   [pageSizeOptions]="pageSizeOptions">
+    </mat-paginator>-->
+  
+</div>

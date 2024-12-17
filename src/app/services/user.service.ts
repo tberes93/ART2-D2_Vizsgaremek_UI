@@ -13,25 +13,11 @@ export class UserService {
         return this.http.get<AppUser>(`${environment.apiUrl}/user/userdata/${userId}`);
     }
 
-
+    getTop10() {
+        return this.http.get<AuthUser[]>(`${environment.apiUrl}/user/top10`);
+    }
     /*
-    let localVarPath = `/dontes/kerelem/${this.configuration.encodeParam({name: "rekordAzonosito", value: rekordAzonosito, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-    return this.httpClient.request<DontesTablazatAdatokPageDto>('get', `${this.configuration.basePath}${localVarPath}`,
-        {
-            context: localVarHttpContext,
-            params: localVarQueryParameters,
-            responseType: <any>responseType_,
-            withCredentials: this.configuration.withCredentials,
-            headers: localVarHeaders,
-            observe: observe,
-            reportProgress: reportProgress
-        }
-    );*/
-
-
-
-
     getAll() {
         return this.http.get<AuthUser[]>(`${environment.apiUrl}/users`);
-    }
+    }*/
 }

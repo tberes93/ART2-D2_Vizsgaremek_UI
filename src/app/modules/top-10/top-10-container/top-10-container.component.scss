@@ -1,0 +1,13 @@
+@import 'cards';
+
+.top-10-container {
+  @extend .shared-card-with;
+
+  .title {
+    @extend .shared-card-title;
+  }
+
+  .top-10-wrapper {
+    @extend .shared-card-wrapper;
+  }
+}
