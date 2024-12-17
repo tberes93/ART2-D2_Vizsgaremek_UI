@@ -6,17 +6,17 @@
   </div>
   <div class="row">
     <div class="col padding-20px">
-      <h2 class="subtitle">Üdvözöllek, {{ userFullName }}</h2>
+      <h2 class="subtitle">Üdvözöllek, {{ getUserFullName() }}</h2>
     </div>
   </div>
   <div class="row">
     <div class="col padding-20px">
-      <h2 class="subtitle">Jelenlegi gyakorlásaid száma: {{ numberOfPracticeDays }}</h2>
+      <h2 class="subtitle">Jelenlegi gyakorlásaid száma: {{ getNumberOfPracticeDays() }}</h2>
     </div>
   </div>
   <div class="row" *ngIf="numberOfConsecutiveDays > 0">
     <div class="col padding-20px">
-      <h2 class="subtitle">Gratulálunk,  {{ numberOfConsecutiveDays }} napja mindennap tettél a látásod érdekében!</h2>
+      <h2 class="subtitle">Gratulálunk,  {{ getNumberOfConsecutiveDays() }} napja mindennap tettél a látásod érdekében!</h2>
     </div>
   </div>
 </div>

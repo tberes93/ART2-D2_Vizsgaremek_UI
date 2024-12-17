@@ -1,0 +1,46 @@
+.login-container {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-color: rgb(68 88 79 / 75%);
+  
+    .login-box {
+      width: 400px;
+      margin: 16px;
+    }
+  
+    .login-button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+  
+  .input-group {
+    margin-block-end: 16px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-block-end: 6px;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #DDD;
+  }
+  
+  .has-error input {
+    border: 2px solid red;
+  }
+  
+  .error {
+    display: block;
+    margin-top: 6px;
+    color: red;
+    font-size: 12px;
+  }
+  

@@ -16,10 +16,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app.routing.module';
-import { MaterialModule } from './modules/material.module';
 import {HeaderComponent} from './components/header/header.component';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
 import {UsersComponent} from './components/users/users.component'; // Import MaterialModule
+import { MaterialModule } from './modules/shared/material.module';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {UsersComponent} from './components/users/users.component'; // Import Mat
     UsersComponent,
     LayoutComponent,
     LoginComponent,
+    RegisterComponent,
     PageNotFoundComponent,
     SidenavComponent, // Nincs duplikálva
   ],

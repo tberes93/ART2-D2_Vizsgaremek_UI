@@ -9,11 +9,17 @@ import {LayoutComponent} from './components/layout/layout.component';
 import {LoginComponent} from './components/login/login.component';
 import {UsersComponent} from './components/users/users.component';
 import { AuthGuard } from './utils/auth-guard';
+import { RegisterComponent } from './components/register/register.component';
 
 const postRoutes: Routes = [
   {
     path: '',
     redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
+    redirectTo: '/register',
     pathMatch: 'full',
   },
   {
@@ -45,6 +51,7 @@ const postRoutes: Routes = [
 
 const appRoutingModule: Routes = [
   {path: 'login', title: 'Login Page', component: LoginComponent},
+  {path: 'register', title: 'Register Page', component: RegisterComponent},
   {
     path: '', component: LayoutComponent, children: [
       ...postRoutes,

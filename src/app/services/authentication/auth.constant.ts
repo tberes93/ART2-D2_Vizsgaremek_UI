@@ -1,1 +1,1 @@
-export const MIN_LENGTH: number = 3;
+export const PASSWORD_MIN_LENGTH: number = 3;

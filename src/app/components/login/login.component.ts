@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-
-import { MIN_LENGTH } from '../../services/authentication/auth.constant';
-
-//import {AuthService} from '../../services/authentication/auth.service';
+import { PASSWORD_MIN_LENGTH } from '../../services/authentication/auth.constant';
 import {SnackbarService} from '../../services/snackbar/snackbar.service';
-import { Observable } from 'rxjs/internal/Observable';
-import { SaveFeedbackService } from '../../utils/save-feedback.service';
 import { AuthenticationService } from '../../services/authentication/authentication-service';
 import { first } from 'rxjs';
 
@@ -22,10 +17,9 @@ export class LoginComponent implements OnInit {
   submitted: boolean = false;
   error = '';
 
-  minLength: number = MIN_LENGTH;
+  minLength: number = PASSWORD_MIN_LENGTH;
 
   constructor(
-   //private readonly auth: AuthService,
     private readonly formBuilder: FormBuilder,
     private readonly snackbar: SnackbarService,
     private readonly route: ActivatedRoute,
@@ -36,10 +30,6 @@ export class LoginComponent implements OnInit {
     if (this.authenticationService.userValue) {
       this.router.navigate(['/home']);
     }
-    /*
-    if (this.auth.isAuthenticated()) {
-      this.router.navigate(['/home']);
-    }*/
   }
 
   ngOnInit() {
@@ -47,7 +37,7 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(this.minLength)]],
     });
-}
+  }
 
   onSubmit(): void {
     this.submitted = true;
@@ -84,5 +74,10 @@ export class LoginComponent implements OnInit {
       // }
     });*/
   }
+
+  onRegister(): void {
+    this.router.navigate(['/register']);
+  }
+ 
 
 }

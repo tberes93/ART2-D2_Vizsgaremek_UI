@@ -3,16 +3,14 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { User } from '../../models/user';
+import { AuthUser } from '../../models/authuser';
 import { environment } from '../../../environments/environment';
-
-//import { environment } from '@environments/environment';
-//import { User } from '@app/models';
+import { UserRegist } from '../../models/userregist';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    private userSubject: BehaviorSubject<User | null>;
-    public user: Observable<User | null>;
+    private userSubject: BehaviorSubject<AuthUser | null>;
+    public user: Observable<AuthUser | null>;
 
     constructor(
         private router: Router,
@@ -35,6 +33,16 @@ export class AuthenticationService {
                 this.userSubject.next(user);
                 return user;
             }));
+    }
+
+    register(userRegistData : UserRegist) {
+        return this.http.post<any>(`${environment.apiUrl}/auth/register`, 
+            { 
+                userName: userRegistData.userName,
+                firstName: userRegistData.firstName,
+                lastName: userRegistData.lastName,
+                password: userRegistData.password
+            });
     }
 
     logout() {

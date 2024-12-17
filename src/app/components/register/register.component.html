@@ -1,0 +1,53 @@
+<div class="login-container">
+    <div class="login-box">
+        <div class="mb-3" align="center">
+            <img src="../../assets/images/logo.png" width="400" height="185" alt="Alkalmazás logo"/>
+        </div>
+    
+        <form [formGroup]="registerForm">
+            <div class="input-group"
+                [ngClass]="{'has-error': registerForm.get('username')?.invalid && submitted && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)}">
+                <label for="username">Felhasználónév</label>
+                <input matInput formControlName="username" id="username" name="username" type="text" class="username" required/>
+            </div>
+
+            <div class="input-group"
+                [ngClass]="{'has-error': registerForm.get('lastname')?.invalid && submitted && (registerForm.get('lastname')?.dirty || registerForm.get('lastname')?.touched)}">
+                <label for="lastname">Vezetéknév</label>
+                <input matInput formControlName="lastname" id="lastname" name="lastname" type="text" class="lastname" required/>
+            </div>
+
+            <div class="input-group"
+                [ngClass]="{'has-error': registerForm.get('firstname')?.invalid && submitted && (registerForm.get('firstname')?.dirty || registerForm.get('firstname')?.touched)}">
+                <label for="firstname">Keresztnév</label>
+                <input matInput formControlName="firstname" id="firstname" name="firstname" type="text" class="firstname" required/>
+            </div>
+
+            <div class="input-group"
+                [ngClass]="{'has-error': registerForm.get('password')?.invalid && submitted && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)}">
+                <label for="password">Jelszó</label>
+                <input matInput formControlName="password" id="password" name="password" type="password" required/>
+                <div
+                    *ngIf="registerForm.get('password')?.errors && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched) && submitted">
+                    <small class="error" *ngIf="registerForm.get('password')?.hasError('minlength')">
+                    A jelszó hosszának legalább {{ minLength }} karakternek kell lennie
+                    </small>
+                </div>
+            </div>
+            <!--
+            <div class="col-sm-12 mb-2">
+                <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+                <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+                </div>
+            </div>
+                <div nbRecaptcha key="public key" formControlName="captcha"></div>
+            -->
+            <div class="row pt-3">
+                <button mat-raised-button color="primary" type="submit" class="login-button" (click)="onSubmit()">
+                    Regisztráció
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
