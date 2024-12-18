@@ -1,9 +1,9 @@
 <div class="top-10-container p-4">
     <h1 class="title">{{ title }}</h1>
-
+ <!--
     <mat-table
         [dataSource]="dataSource">
-        <!--
+       
       <ng-container matColumnDef="hatarido">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Határidő </mat-header-cell>
         <mat-cell *matCellDef="let row"> {{ formatDateTimeString(row?.hatarido) }} </mat-cell>
@@ -41,8 +41,8 @@
       <mat-row *matRowDef="let row; columns: displayedSajatColumns;"
           (dblclick)="openSajatFeladatEditModal()" (click)="onRowClickSajat(row)" [ngClass]="isSajatSelected(row) ? 'selected' : ''">
       </mat-row>
-      -->
-    </mat-table>
+      
+    </mat-table>-->
     <!--
     <mat-paginator #sajatPaginator
                    [length]="sajatLength"

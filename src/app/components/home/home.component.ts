@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { Observable } from 'rxjs';
 import { AppUser } from '../../models/appuser';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
+import { AuthenticationService } from '../../services/authentication/authentication-service';
 
 @Component({
   selector: 'pst-home',
@@ -19,8 +20,9 @@ export class HomeComponent implements OnInit {
   numberOfConsecutiveDays: number = 0;
 
   constructor(private userService: UserService,
+    private readonly authService: AuthenticationService,
     private readonly snackbar: SnackbarService,
-  ) {;
+  ) {
   }
 
   ngOnInit(): void {
@@ -28,7 +30,11 @@ export class HomeComponent implements OnInit {
   }
   
   private initData(): void {
-    this.getUserData().subscribe(
+    const user = this.authService.userValue;
+    if (!user || !user.id) {
+      return;
+    }
+    this.getUserData(user.id).subscribe(
       {
         next: (user) => {
           if (user) {
@@ -43,8 +49,8 @@ export class HomeComponent implements OnInit {
     );
   };
 
-  public getUserData(): Observable<any> {
-    return this.userService.getUserData(-1);
+  public getUserData(userId: number): Observable<any> {
+    return this.userService.getUserData(userId);
   }
 
   getUserFullName():string {

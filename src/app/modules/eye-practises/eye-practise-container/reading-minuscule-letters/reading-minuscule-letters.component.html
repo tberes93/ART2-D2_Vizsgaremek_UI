@@ -1,1 +1,13 @@
-<p>reading-minuscule-letters works!</p>
+<div class="reading-minuscule-container p-4">
+    <h1 class="title">{{ title }}</h1>
+
+    @for (fontStype of fontStyleList; track fontStype) {
+        @for (eye_exercise of eyeExerciseList; track eye_exercise) {
+            <div class="row col-sm-12 mt-3">
+                <div class="col-sm-12">
+                    {{eye_exercise.text}}
+                </div>
+            </div>
+        }
+    }
+</div>

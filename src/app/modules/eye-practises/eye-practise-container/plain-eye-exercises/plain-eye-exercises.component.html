@@ -1,1 +1,22 @@
-<p>plain-eye-exercises works!</p>
+<div class="plain-eye-exercises-container p-4">
+    <h1 class="title">{{ title }}</h1>
+
+    @for (eye_exercise of eyeExerciseList; track eye_exercise) {
+        <div class="row col-sm-12 mt-3" >
+            <div class="col-sm-12">
+                <b>{{eye_exercise.name}}</b>
+            </div>
+        </div>
+        <div class="row col-sm-12 mt-3" >
+            <div class="col-sm-12">
+                {{eye_exercise.text}}
+            </div>
+        </div>
+        @for (image of eye_exercise.images; track image) {
+            <div class="mb-3" align="center">
+                <img src="../../../../../assets/images/exercise/{{image.imgName}}" /> 
+                <!--<img src="../../../assets/images/PuzzleCompleted_{{ id }}.gif"/>-->
+            </div>
+        }
+    }
+</div>
