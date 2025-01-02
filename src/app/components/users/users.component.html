@@ -1,5 +1,52 @@
-<div class="users-container p-4">
-  <div class="px-3 py-3 text-center">
-    <h1 class="title">{{ title }}</h1>
+<div class="top-10-container">
+  <h1>{{ title }}</h1>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource">
+
+    <!-- User Name Column -->
+    <ng-container matColumnDef="userName">
+      <mat-header-cell *matHeaderCellDef> Felhasználónév </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.userName }} </mat-cell>
+    </ng-container>
+
+    <!-- firstName Column -->
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> Vezetéknév </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.firstName }} </mat-cell>
+    </ng-container>
+
+    <!-- lastName Column -->
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Vezetéknév </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.lastName }} </mat-cell>
+    </ng-container>
+
+    <!-- numberOfConsecutiveDays Column -->
+    <ng-container matColumnDef="numberOfConsecutiveDays">
+      <mat-header-cell *matHeaderCellDef> Egymást követő aktív napok száma </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.numberOfConsecutiveDays }} </mat-cell>
+    </ng-container>
+
+    <!-- numberOfPracticeDays Column -->
+    <ng-container matColumnDef="numberOfPracticeDays">
+      <mat-header-cell *matHeaderCellDef> Aktív napok száma </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.numberOfPracticeDays }} </mat-cell>
+    </ng-container>
+
+    <!-- lastPracticeDate Column -->
+    <ng-container matColumnDef="lastPracticeDate">
+      <mat-header-cell *matHeaderCellDef> Utolsó aktív nap dátuma </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.lastPracticeDate }} </mat-cell>
+    </ng-container>
+
+    <!-- Table Header and Rows -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <!-- No Data Message -->
+  <div *ngIf="!dataSource" class="no-data">
+    <p>Nincs megjeleníthető adat.</p>
   </div>
 </div>
+

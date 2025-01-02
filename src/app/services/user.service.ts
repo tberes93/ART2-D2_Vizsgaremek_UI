@@ -16,8 +16,8 @@ export class UserService {
     getTop10() {
         return this.http.get<AuthUser[]>(`${environment.apiUrl}/user/top10`);
     }
-    /*
+
     getAll() {
-        return this.http.get<AuthUser[]>(`${environment.apiUrl}/users`);
-    }*/
+      return this.http.get<AuthUser[]>(`${environment.apiUrl}/user`);
+    }
 }
