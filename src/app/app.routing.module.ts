@@ -1,8 +1,5 @@
 import {NgModule} from '@angular/core';
 import {ExtraOptions, RouterModule, Routes} from '@angular/router';
-
-//import {authGuard} from './services/authentication/auth.guard';
-
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {HomeComponent} from './components/home/home.component';
 import {LayoutComponent} from './components/layout/layout.component';
@@ -46,7 +43,7 @@ const postRoutes: Routes = [
     path: 'top_ten',
     data: {title: 'Top 10-es lista'},
     loadChildren: () => import('./modules/top-10/top-10.module').then(m => m.Top10Module),
-  },
+  }
 ];
 
 const appRoutingModule: Routes = [

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthUser } from '../models/authuser';
 import { environment } from '../../environments/environment';
 import { AppUser } from '../models/appuser';
+import { Reward } from '../models/reward';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -23,6 +24,10 @@ export class UserService {
 
     postStartExercise(userId: number) {
         return this.http.post<any>(`${environment.apiUrl}/user/start-exercise`, { userId });
+    }
+
+    getAllRewardsByUser(userId: number) {
+        return this.http.get<Reward[]>(`${environment.apiUrl}/user/rewards/${userId}`);
     }
 
 }

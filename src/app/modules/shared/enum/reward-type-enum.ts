@@ -1,0 +1,4 @@
+export enum RewardType {
+	PRACTICEDAYS_REWARD,
+	CONSECUTIVEDAYS_REWARD
+}

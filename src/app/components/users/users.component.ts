@@ -46,4 +46,9 @@ export class UsersComponent {
   public getUserList(): Observable<any> {
     return this.userService.getAll();
   }
+/*
+  formatDateString(date: string) {
+    return this.parseToDateString(date);
+  }
+*/
 }

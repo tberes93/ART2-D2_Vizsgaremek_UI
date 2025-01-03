@@ -1,0 +1,15 @@
+<div class="award-container">
+    <h1>{{ title }}</h1>
+
+    @for (reward of practiceDaysRewards; track reward) {
+        <div class="mb-3" align="center">
+            <img src="../../../../../assets/images/reward/{{reward.imgName}}" />
+        </div>
+    }
+    @for (reward of conseqDaysRewards; track reward) {
+        <div class="mb-3" align="center">
+            <img src="../../../../../assets/images/reward/{{reward.imgName}}" />
+        </div>
+    }  
+</div>
+  

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-
-//import { AuthService } from '../../services/authentication/auth.service';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
 
 import { Nav } from '../../core/interfaces/nav.interface';

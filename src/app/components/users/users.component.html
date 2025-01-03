@@ -36,7 +36,7 @@
     <!-- lastPracticeDate Column -->
     <ng-container matColumnDef="lastPracticeDate">
       <mat-header-cell *matHeaderCellDef> Utolsó aktív nap dátuma </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{ user.lastPracticeDate }} </mat-cell>
+      <mat-cell *matCellDef="let user"> {{ user.lastPracticeDate | date: 'yyyy.MM.dd' }}</mat-cell>
     </ng-container>
 
     <!-- Table Header and Rows -->

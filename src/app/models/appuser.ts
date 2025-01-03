@@ -9,4 +9,6 @@ export interface AppUser {
   numberOfConsecutiveDays: number;
   numberOfPracticeDays: number;
   iconImgName: string;
+  score: number;
+  isAdmin: boolean;
 }

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   numberOfPracticeDays: number = 0;
   numberOfConsecutiveDays: number = 0;
 
-  constructor(private userService: UserService,
+  constructor(private readonly userService: UserService,
     private readonly authService: AuthenticationService,
     private readonly snackbar: SnackbarService,
   ) {
