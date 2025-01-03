@@ -14,61 +14,65 @@ import { Exercise } from '../../../../models/exercise';
 })
 export class ReadingMinusculeLettersComponent implements OnInit {
 
+
   title: string = "Olvasási gyakorlatok"
 
    eyePractice!: Practice;
    eyeExerciseList!: Exercise[];
-   fontStyleList: string[] = ['font10', 'font8', 'font6', 'font4', 'font2'];
+   fontStyleList: string[] = ['font12', 'font10', 'font8', 'font6', 'font4'];
   
-    constructor(
-        private readonly practiceService: PracticeService,
-        private readonly exerciseService: ExerciseService,
-        private readonly snackbar: SnackbarService
-      ) {
-      }
+  constructor(
+      private readonly practiceService: PracticeService,
+      private readonly exerciseService: ExerciseService,
+      private readonly snackbar: SnackbarService
+    ) {
+  }
+
+  ngOnInit(): void {
+    this.initData();
+    this.exerciseService.startExercise();
+  }
+
+  private initData(): void {
+      this.getPractiseByType().subscribe(
+        {
+          next: (practice) => {
+            if (practice) {
+              this.eyePractice = practice;
+              this.getAllPracticeExercises();
+            }
+          },
+          error: (error) => {
+            this.snackbar.errorMessage(error.message);
+          }
+        }
+      );
+    }
   
-    ngOnInit(): void {
-      this.initData();
+    public getPractiseByType(): Observable<any> {
+      return this.practiceService.getPractiseByType(EyePracticeType.OLVASAS);
+    }
+  
+    private getAllPracticeExercises() {
+      this.callAllExercisesByPractice().subscribe(
+        {
+          next: (exercises) => {
+            if (exercises) {
+              this.eyeExerciseList = exercises;
+            }
+          },
+          error: (error) => {
+            this.snackbar.errorMessage(error.message);
+          }
+        }
+      );
+    }
+  
+    public callAllExercisesByPractice(): Observable<any> {
+      return this.exerciseService.getAllEyeExerciseByEyePracticeId(this.eyePractice.id);
     }
 
-    private initData(): void {
-        this.getPractiseByType().subscribe(
-          {
-            next: (practice) => {
-              if (practice) {
-                this.eyePractice = practice;
-                this.getAllPracticeExercises();
-              }
-            },
-            error: (error) => {
-              this.snackbar.errorMessage(error.message);
-            }
-          }
-        );
-      }
     
-      public getPractiseByType(): Observable<any> {
-        return this.practiceService.getPractiseByType(EyePracticeType.OLVASAS);
-      }
-    
-      private getAllPracticeExercises() {
-        this.callAllExercisesByPractice().subscribe(
-          {
-            next: (exercises) => {
-              if (exercises) {
-                this.eyeExerciseList = exercises;
-              }
-            },
-            error: (error) => {
-              this.snackbar.errorMessage(error.message);
-            }
-          }
-        );
-      }
-    
-      public callAllExercisesByPractice(): Observable<any> {
-        return this.exerciseService.getAllEyeExerciseByEyePracticeId(this.eyePractice.id);
-      }
     
 
 }

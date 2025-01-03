@@ -27,6 +27,7 @@ export class PlainEyeExercisesComponent implements OnInit {
 
   ngOnInit(): void {
     this.initData();
+    this.exerciseService.startExercise();
   }
   
   private initData(): void {

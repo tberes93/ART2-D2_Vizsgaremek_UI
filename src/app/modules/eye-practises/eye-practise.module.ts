@@ -1,4 +1,3 @@
-import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -13,7 +12,6 @@ import {eyePractisesComponents} from './eye-practises.components';
 @NgModule({
   imports: [
     EyePractiseRoutingModule,
-    CommonModule,
     FormsModule,
     MaterialModule,
     SharedModule,

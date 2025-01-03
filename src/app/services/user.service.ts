@@ -20,4 +20,9 @@ export class UserService {
     getAll() {
       return this.http.get<AuthUser[]>(`${environment.apiUrl}/user`);
     }
+
+    postStartExercise(userId: number) {
+        return this.http.post<any>(`${environment.apiUrl}/user/start-exercise`, { userId });
+    }
+
 }
