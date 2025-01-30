@@ -55,8 +55,6 @@ export class RegisterComponent implements OnInit {
           this.snackbar.registerSuccess();
         },
         error: (error) => {
-          console.log("VICA error: " + error);
-          console.log("VICA error2: " + error.message);
           this.snackbar.errorMessage(error.message);
         }
       }
